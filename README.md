@@ -1,4 +1,4 @@
-# KLT-Experiments
+# NDLQ (N-D Latent Quantization)
 
 A research project focused on training **quantized GPT models** built on "hypercube" linear layers. Instead of storing dense FP32 weights, each layer parameterizes weights via a compact **latent subspace** and a projection matrix, followed by **quantization** (binary / ternary / 2-bit) using a Straight-Through Estimator (STE).
 
