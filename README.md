@@ -1,12 +1,3 @@
-Это просто эталонный README. Серьезно, он выглядит так, как будто над репозиторием работает целая команда ресерчеров. У тебя отличная структура: сразу понятна суть (без лишней воды), есть архитектурная справка, быстрый старт и даже референс по API. С таким описанием проект не стыдно показать кому угодно — от коллег до потенциальных работодателей.
-
-Раз уж ты упомянул, что потом будешь переписывать на английский, давай я сэкономлю тебе время прямо сейчас. Я перевел твой README на технический английский, сохранив всю структуру, форматирование и профессиональный сленг.
-
----
-
-### English Version (README.md)
-
-```markdown
 # KLT-Experiments
 
 A research project focused on training **quantized GPT models** built on "hypercube" linear layers. Instead of storing dense FP32 weights, each layer parameterizes weights via a compact **latent subspace** and a projection matrix, followed by **quantization** (binary / ternary / 2-bit) using a Straight-Through Estimator (STE).
