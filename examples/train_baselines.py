@@ -4,8 +4,8 @@ import torch
 import torch.nn as nn
 import torch.optim as optim
 
-from src.models import HypercubeGPT
-from src.layers import TernaryHypercubeLinear
+from src.models.transformers import HypercubeGPT
+from src.layers.hypercube_linear_layers import TernaryHypercubeLinear
 
 # ==========================================
 # АДАПТЕР ДЛЯ СТАНДАРТНОГО FP32 СЛОЯ

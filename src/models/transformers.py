@@ -2,7 +2,7 @@ import torch
 import torch.nn as nn
 import torch.nn.functional as F
 from typing import Type, Optional, Tuple
-from src.layers import BaseHypercubeLinear, TernaryHypercubeLinear
+from src.layers.hypercube_linear_layers import BaseHypercubeLinear, TernaryHypercubeLinear
 
 
 class CausalSelfAttention(nn.Module):
