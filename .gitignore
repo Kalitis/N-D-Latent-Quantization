@@ -219,3 +219,7 @@ __marimo__/
 # Streamlit
 .streamlit/secrets.toml
 input.txt
+# Экспериментальные артефакты: результаты прогонов и кэш сабсета TinyStories
+runs/
+tinystories_subset_*.txt
+tinystories_subset.txt
