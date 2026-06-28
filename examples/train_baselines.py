@@ -1,9 +1,11 @@
 import os
+import sys
 import urllib.request
 import torch
 import torch.nn as nn
 import torch.optim as optim
 
+sys.path.append(os.path.abspath('..'))
 from src.models.transformers import HypercubeGPT
 from src.layers.hypercube_linear_layers import TernaryHypercubeLinear
 
@@ -24,7 +26,7 @@ class StandardFP32Linear(nn.Linear):
 device = 'cuda' if torch.cuda.is_available() else 'cpu'
 block_size = 128
 batch_size = 64
-max_iters = 1000  # Сделаем короче, так как учим две модели подряд
+max_iters = 2000 
 
 data_path = 'input.txt'
 if not os.path.exists(data_path):

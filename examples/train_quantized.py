@@ -1,11 +1,13 @@
 import os
+import sys
 import urllib.request
 import torch
 import torch.optim as optim
 
 # Импортируем нашу архитектуру из src
-from src.models import HypercubeGPT
-from src.layers import BinaryHypercubeLinear, TernaryHypercubeLinear, TwoBitHypercubeLinear
+sys.path.append(os.path.abspath('..'))
+from src.models.transformers import HypercubeGPT
+from src.layers.hypercube_linear_layers import BinaryHypercubeLinear, TernaryHypercubeLinear, TwoBitHypercubeLinear
 
 # ==========================================
 # КОНФИГУРАЦИЯ И ЗАГРУЗКА ДАННЫХ
@@ -13,7 +15,7 @@ from src.layers import BinaryHypercubeLinear, TernaryHypercubeLinear, TwoBitHype
 device = 'cuda' if torch.cuda.is_available() else 'cpu'
 block_size = 128
 batch_size = 64
-max_iters = 1500
+max_iters = 2500
 eval_interval = 250
 learning_rate = 1e-3
 
@@ -71,7 +73,7 @@ if __name__ == "__main__":
     
     # Легкое переключение между режимами!
     # Варианты: BinaryHypercubeLinear, TernaryHypercubeLinear, TwoBitHypercubeLinear
-    LayerClass = TernaryHypercubeLinear
+    LayerClass = TwoBitHypercubeLinear
     group_size = 5  # Оптимальный размер для тернарного режима
     
     print(f"Создание модели с использованием: {LayerClass.__name__} (Group Size: {group_size})")
