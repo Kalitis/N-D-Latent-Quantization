@@ -51,7 +51,7 @@ class QuantizedLinearSTE(nn.Module):
         w = self.weight
         # BitNet-style нормализация (идентична BaseHypercubeLinear)
         w_centered = w - w.mean(dim=-1, keepdim=True)
-        scale = w_centered.abs().mean() + 1e-5
+        scale = w_centered.abs().mean(dim=-1, keepdim=True) + 1e-5
         w_normalized = w_centered / scale
 
         w_quantized = self.quantize(w_normalized)

@@ -71,7 +71,7 @@ class BaseHypercubeLinear(nn.Module):
         self.groups = self.pad_features // group_size
         
         # Непрерывные латентные координаты весов [out_features, groups, latent_dim]
-        self.weight_latent = nn.Parameter(torch.randn(out_features, self.groups, latent_dim) * 0.1)
+        self.weight_latent = nn.Parameter(torch.randn(out_features, self.groups, latent_dim) * 0.02)
         
         # Обучаемая матрица проекции [latent_dim, group_size]
         raw_proj = torch.randn(latent_dim, group_size)
@@ -98,7 +98,7 @@ class BaseHypercubeLinear(nn.Module):
         
         # 3. Стандартизация (Центрирование и Масштабирование) по канонам BitNet
         W_centered = W_continuous - W_continuous.mean(dim=-1, keepdim=True)
-        scale = W_centered.abs().mean() + 1e-5
+        scale = W_centered.abs().mean(dim=-1, keepdim=True) + 1e-5
         W_normalized = W_centered / scale
         
         # 4. Квантование через переопределенный в субклассе STE

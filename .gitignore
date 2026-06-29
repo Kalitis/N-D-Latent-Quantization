@@ -222,4 +222,6 @@ input.txt
 # Экспериментальные артефакты: результаты прогонов и кэш сабсета TinyStories
 runs/
 tinystories_subset_*.txt
+cosmopedia_*_subset_*.txt
 tinystories_subset.txt
+src/layers/__pycache__/hypercube_linear_layers.cpython-313.pyc
